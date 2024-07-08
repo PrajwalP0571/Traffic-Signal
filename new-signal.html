@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 660px;
+        }
+
+        .trafic-signal {
+            position: absolute;
+            width: 20%;
+            height: 660px;
+            background-color: wheat;
+            border: 5px solid black;
+            border-radius: 30px;
+        }
+
+        .signal-div {
+            width: 70%;
+            height: 480px;
+            margin-left: 14%;
+            margin-top: 10px;
+            border: 2px solid black;
+            border-radius: 10%;
+        }
+
+        .circle {
+            width: 140px;
+            height: 140px;
+            margin-left: 20px;
+            margin-top: 12px;
+            border: 2px solid black;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        .btn {
+            width: 80%;
+            height: 40px;
+            margin-left: 10%;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+        #red-btn {
+            background-color: red;
+        }
+
+        #yellow-btn {
+            background-color: yellow;
+        }
+
+        #green-btn {
+            background-color: green;
+        }
+
+        .space {
+
+        }
+
+        .road1 {
+            position: absolute;
+            left: 445px;
+            width: 25%;
+            height: 660px;
+            border: 10px solid orange;
+            background-color: gray;
+        }
+
+        #car-l {
+            width: 50%;
+            height: 130px;
+        }
+
+        #car-r {
+            width: 50%;
+            height: 130px;
+            rotate: 180deg;
+        }
+
+        .divider {
+            position: absolute;
+            width: 80px;
+            height: 680px;
+            right: 480px;
+            background-color: green;
+        }
+
+        .road2 {
+            position: absolute;
+            right: 120px;
+            width: 25%;
+            height: 660px;
+            border: 10px solid orange;
+            background-color: gray;
+        }
+
+        #car1 {
+            position: absolute;
+            left: 40%;
+            bottom: 0px;
+            animation-name: moving-for;
+            animation-duration: 10s;
+        }
+
+        @keyframes moving-for {
+            0%{bottom: 100px;}
+            20%{bottom: 200px;}
+            40%{bottom: 300px;}
+            60%{bottom: 400px;}
+            80%{bottom: 500px;}
+            100%{bottom: 600px;}
+        }
+
+        #car5 {
+            position: absolute;
+            right: 15%;
+            top: 0px;
+            rotate: 180deg;
+            animation-name: moving-bac;
+            animation-duration: 10s;
+        }
+
+        @keyframes moving-bac {
+            0%{top: 100px;}
+            20%{top: 200px;}
+            40%{top: 300px;}
+            60%{top: 400px;}
+            80%{top: 500px;}
+            100%{top: 600px;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="trafic-signal">
+            <div class="signal-div">
+                <div class="circle" id="red"></div>
+                <div class="circle" id="yellow"></div>
+                <div class="circle" id="green"></div>
+            </div>
+            <button onclick="toggleSignal('red')" class="btn" id="red-btn">RED</button>
+            <button onclick="toggleSignal('yellow')" class="btn" id="yellow-btn">YELLOW</button>
+            <button onclick="toggleSignal('green','car1')" class="btn" id="green-btn">GREEN</button>
+        </div>
+        <div class="space"></div>
+
+        <div class="road1">
+    
+        </div>
+
+        <div class="divider"></div>
+        <div class="road2">
+            <div></div>
+            <div></div>
+        </div>
+        <img src="car1-removebg-preview.png" id="car1" alt="">
+        <img src="car2-removebg-preview.png" id="car1" alt="">
+        <img src="car3-removebg-preview.png" id="car1" alt="">
+        <img src="car4-removebg-preview.png" id="car1" alt="">
+        <img src="car5-removebg-preview.png" id="car5" alt="">
+    </div>
+
+    <script>
+        function toggleSignal(signalColour) {
+            if (signalColour === 'red') {
+                document.getElementById('red').style.backgroundColor = 'red';
+                document.getElementById('yellow').style.backgroundColor = 'black';
+                document.getElementById('green').style.backgroundColor = 'black';
+            } else if (signalColour === 'yellow') {
+                document.getElementById('yellow').style.backgroundColor = 'yellow';
+                document.getElementById('red').style.backgroundColor = 'black';
+                document.getElementById('green').style.backgroundColor = 'black';
+            } else if (signalColour === 'green') {
+                document.getElementById('green').style.backgroundColor = 'green';
+                document.getElementById('red').style.backgroundColor = 'black';
+                document.getElementById('yellow').style.backgroundColor = 'black';
+                
+            }
+        }
+
+        function move() {
+
+        }
+
+        function stop() {
+
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+
+
